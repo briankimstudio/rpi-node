@@ -38,6 +38,13 @@ if [ $? -ne 0 ]; then
   uncompressing
 fi
 
+if [ $? -ne 0 ]; then
+  echo "$NODE_VER.tar.gz is corrupted..."
+  rm $NODE_VER.tar.gz
+  echo "Download $NODE_VER.tar.gz manually, then, run again..."
+  exit 1
+fi
+
 cd $NODE_VER
 echo "Configuring...";./configure
 echo "Compiling...";make
