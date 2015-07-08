@@ -26,3 +26,5 @@ echo "Compiling..."
 make
 echo "Installing..."
 sudo make install
+echo "Checking version"
+node -v
